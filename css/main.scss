@@ -8,6 +8,12 @@ body {
     margin: 0;
 }
 
+@mixin desktop{
+    @media (min-width:840px){
+        @content;
+    }
+}
+
 .header {
     margin: 1em;
     font-size: 2em;
@@ -17,6 +23,11 @@ body {
     text-transform: uppercase;
     font-weight: lighter;
     cursor: pointer;
+    background:black;
+    color:white;
+    @include desktop{
+        background: transparent;
+        color:black;
     span {
         padding: 1em;
         color: #000000;
@@ -27,6 +38,7 @@ body {
             box-shadow: 2px 2px 25px #000000;
         }
     }
+}
 }
 
 .download {
@@ -56,8 +68,10 @@ body {
 }
 
 .content-grid {
-    display: grid;
-    grid-template-columns: 50% 50%;
+    @include desktop{
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
     color: grey;
     letter-spacing: 2px;
     font-family: 'Josefin Sans', sans-serif;
@@ -80,7 +94,6 @@ body {
 }
 ul{
     list-style-type: none;
-    
     li{
         transition: 1s;
         &:hover{
@@ -95,12 +108,19 @@ ul{
 }
 
 .large-font {
-    font-size: 72px;
+    @include desktop{
+        font-size: 72px;
+    }
+    font-size:48px;
+    
 }
 
 img {
-    width: 100%;
+    width: 99%;
     height: 100%;
+    @include desktop{
+        width:100%;
+    }
 }
 .slide-in{
     animation-name: slide-in;

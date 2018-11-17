@@ -17,21 +17,28 @@ body {
   text-transform: uppercase;
   font-weight: lighter;
   cursor: pointer;
+  background: black;
+  color: white;
 }
 
-.header span {
-  padding: 1em;
-  color: #000000;
-  background: #ffffff;
-  -webkit-box-shadow: 2px 2px 15px #000000;
-          box-shadow: 2px 2px 15px #000000;
-  -webkit-transition: 0.7s;
-  transition: 0.7s;
-}
-
-.header span:hover {
-  -webkit-box-shadow: 2px 2px 25px #000000;
-          box-shadow: 2px 2px 25px #000000;
+@media (min-width: 840px) {
+  .header {
+    background: transparent;
+    color: black;
+  }
+  .header span {
+    padding: 1em;
+    color: #000000;
+    background: #ffffff;
+    -webkit-box-shadow: 2px 2px 15px #000000;
+            box-shadow: 2px 2px 15px #000000;
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
+  }
+  .header span:hover {
+    -webkit-box-shadow: 2px 2px 25px #000000;
+            box-shadow: 2px 2px 25px #000000;
+  }
 }
 
 .download {
@@ -66,15 +73,20 @@ body {
 }
 
 .content-grid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 50% 50%;
-      grid-template-columns: 50% 50%;
   color: grey;
   letter-spacing: 2px;
   font-family: 'Josefin Sans', sans-serif;
   margin-top: 1em;
   margin-bottom: 3em;
+}
+
+@media (min-width: 840px) {
+  .content-grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+  }
 }
 
 .content-grid .content {
@@ -125,12 +137,24 @@ ul li:hover {
 }
 
 .large-font {
-  font-size: 72px;
+  font-size: 48px;
+}
+
+@media (min-width: 840px) {
+  .large-font {
+    font-size: 72px;
+  }
 }
 
 img {
-  width: 100%;
+  width: 99%;
   height: 100%;
+}
+
+@media (min-width: 840px) {
+  img {
+    width: 100%;
+  }
 }
 
 .slide-in {
